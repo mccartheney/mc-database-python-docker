@@ -1,6 +1,8 @@
 # import click to get arguments
 import click
 
+from inicializeDatabase import inicialize
+
 # initiliaze click
 @click.command()
 # get first argument
@@ -39,4 +41,8 @@ def doFunction (funtion_entry, funtion_argument_one, funtion_argument_two, funti
 
 
 if __name__ == "__main__" :
+    # create database dir in case is the first time using 
+    inicialize()
+
+    # run query in database
     doFunction()
