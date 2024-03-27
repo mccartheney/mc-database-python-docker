@@ -6,6 +6,7 @@ from inicialize_database import inicialize
 from create_table import create_table
 from delete_table import remove_table
 from insert_table import insert_table
+from show_tables import show_tables
 
 # initiliaze click
 @click.command()
@@ -22,7 +23,9 @@ from insert_table import insert_table
 # pass all arguments to funtion 
 def doFunction (funtion_entry, funtion_argument_one, funtion_argument_two, funtion_argument_three, funtion_argument_four, funtion_argument_five) :
     if funtion_entry == "SHOW" :
-        pass
+        if funtion_argument_one == "TABLES" :
+            show_tables()
+
 
     elif funtion_entry == 'DELETE' :
         
@@ -32,7 +35,7 @@ def doFunction (funtion_entry, funtion_argument_one, funtion_argument_two, funti
         table_name = funtion_argument_one
         keys = funtion_argument_two.split (",")
         create_table(table_name=table_name, keys=keys)
-        pass
+
 
     elif funtion_entry == 'INSERT' :
         table_name = funtion_argument_two
@@ -40,7 +43,7 @@ def doFunction (funtion_entry, funtion_argument_one, funtion_argument_two, funti
         values = funtion_argument_five.split(",")
 
         insert_table(table_name=table_name, keys=keys, values=values)
-        pass
+
 
     elif funtion_entry == 'SELECT' :
         pass
@@ -48,12 +51,10 @@ def doFunction (funtion_entry, funtion_argument_one, funtion_argument_two, funti
     elif funtion_entry == 'REMOVE' :
         table_name = funtion_argument_one
         remove_table(table_name=table_name)
-        pass
+
 
     elif funtion_entry == 'EDIT' :
         pass
-
-
 
 if __name__ == "__main__" :
     # create database dir in case is the first time using 

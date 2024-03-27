@@ -5,3 +5,4 @@ WORKDIR /app
 COPY src/ /app
 
 RUN pip install click
+RUN pip install tabulate
