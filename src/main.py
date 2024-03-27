@@ -7,6 +7,7 @@ from create_table import create_table
 from delete_table import remove_table
 from insert_table import insert_table
 from show_tables import show_tables
+from show_table import show_table
 
 # initiliaze click
 @click.command()
@@ -25,6 +26,11 @@ def doFunction (funtion_entry, funtion_argument_one, funtion_argument_two, funti
     if funtion_entry == "SHOW" :
         if funtion_argument_one == "TABLES" :
             show_tables()
+            return
+
+        table_name = funtion_argument_one
+        show_table(table_name=table_name)
+
 
 
     elif funtion_entry == 'DELETE' :
