@@ -5,6 +5,7 @@ from inicialize_database import inicialize
 
 from create_table import create_table
 from delete_table import remove_table
+from insert_table import insert_table
 
 # initiliaze click
 @click.command()
@@ -34,6 +35,11 @@ def doFunction (funtion_entry, funtion_argument_one, funtion_argument_two, funti
         pass
 
     elif funtion_entry == 'INSERT' :
+        table_name = funtion_argument_two
+        keys = funtion_argument_three.split(",")
+        values = funtion_argument_five.split(",")
+
+        insert_table(table_name=table_name, keys=keys, values=values)
         pass
 
     elif funtion_entry == 'SELECT' :
