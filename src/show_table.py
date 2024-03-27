@@ -25,10 +25,6 @@ def show_table (table_name) :
             
             table_content.append(content_to_append)
             
-
-
-
-
         print("\n")
         print(tabulate(table_content,headers=header_content))
         print("\n")

@@ -8,6 +8,7 @@ from delete_table import remove_table
 from insert_table import insert_table
 from show_tables import show_tables
 from show_table import show_table
+from select_column import select_column
 
 # initiliaze click
 @click.command()
@@ -42,17 +43,17 @@ def doFunction (funtion_entry, funtion_argument_one, funtion_argument_two, funti
         keys = funtion_argument_two.split (",")
         create_table(table_name=table_name, keys=keys)
 
-
     elif funtion_entry == 'INSERT' :
         table_name = funtion_argument_two
         keys = funtion_argument_three.split(",")
         values = funtion_argument_five.split(",")
-
         insert_table(table_name=table_name, keys=keys, values=values)
 
-
     elif funtion_entry == 'SELECT' :
-        pass
+        key_name = funtion_argument_one
+        table_name = funtion_argument_three
+        condition = funtion_argument_five
+        select_column(key_name=key_name, table_name=table_name, condition=condition)
 
     elif funtion_entry == 'REMOVE' :
         table_name = funtion_argument_one
