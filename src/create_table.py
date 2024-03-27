@@ -1,18 +1,9 @@
 # import os to create dirs
 import os
 
-# import click to get params from user
-import click
-
 # funtion for verify is table exists
 from verify_table_existence import verify_table_existence
 
-# initialize click
-@click.command()
-
-# get arguments by click
-@click.argument("table_name")
-@click.argument("keys", nargs=-1)
 # create funtion to create table
 def create_table (table_name, keys) : # pass click arguments to 
     # if table dont exists
@@ -22,22 +13,9 @@ def create_table (table_name, keys) : # pass click arguments to
 
         # do a loop through keys
         for keyIndex in range(len(keys)) :
-            # the keys comes with a "bug", for exemple [this, is, a, array]
-            # it will return as :
-            # [this,
-            # is,
-            # a,
-            # array]
-
+            
             # file name is equal the key
             filename = keys[keyIndex]
-            # from the actual key get all except the last caracter
-            filename = filename[:-1]
-            
-            # if it is the first key
-            if keyIndex == 0 :
-                # get all minus the the first caracter
-                filename = filename[1:]
 
             # create key file
             with open(f"./database/{table_name}/{filename}.txt", "w") as key_file:
@@ -50,5 +28,3 @@ def create_table (table_name, keys) : # pass click arguments to
     print (f"{table_name} already exists !")
 
     return
-
-create_table()
