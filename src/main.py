@@ -10,6 +10,7 @@ from show_tables import show_tables
 from show_table import show_table
 from select_column import select_column
 from remove_table_content import remove_table_content
+from remove_from import remove_from
 
 # initiliaze click
 @click.command()
@@ -56,12 +57,11 @@ def doFunction (funtion_entry, funtion_argument_one, funtion_argument_two, funti
 
     elif funtion_entry == 'REMOVE' :
         table_name = funtion_argument_two
+        condition = funtion_argument_four.split("=")
         if funtion_argument_three == "" :
             remove_table_content(table_name=table_name)
             return
-    
-        
-
+        remove_from(table_name=table_name, condition=condition)
 
     elif funtion_entry == 'EDIT' :
         pass
