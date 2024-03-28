@@ -9,6 +9,7 @@ from insert_table import insert_table
 from show_tables import show_tables
 from show_table import show_table
 from select_column import select_column
+from remove_table_content import remove_table_content
 
 # initiliaze click
 @click.command()
@@ -32,11 +33,9 @@ def doFunction (funtion_entry, funtion_argument_one, funtion_argument_two, funti
         table_name = funtion_argument_one
         show_table(table_name=table_name)
 
-
-
     elif funtion_entry == 'DELETE' :
-        
-        pass
+        table_name = funtion_argument_one
+        remove_table(table_name=table_name)
 
     elif funtion_entry == 'CREATE' :
         table_name = funtion_argument_one
@@ -56,8 +55,12 @@ def doFunction (funtion_entry, funtion_argument_one, funtion_argument_two, funti
         select_column(key_name=key_name, table_name=table_name, condition=condition)
 
     elif funtion_entry == 'REMOVE' :
-        table_name = funtion_argument_one
-        remove_table(table_name=table_name)
+        table_name = funtion_argument_two
+        if funtion_argument_three == "" :
+            remove_table_content(table_name=table_name)
+            return
+    
+        
 
 
     elif funtion_entry == 'EDIT' :
