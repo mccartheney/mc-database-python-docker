@@ -11,6 +11,7 @@ from show_table import show_table
 from select_column import select_column
 from remove_table_content import remove_table_content
 from remove_from import remove_from
+from edit_table import edit_table
 
 # initiliaze click
 @click.command()
@@ -64,7 +65,10 @@ def doFunction (funtion_entry, funtion_argument_one, funtion_argument_two, funti
         remove_from(table_name=table_name, condition=condition)
 
     elif funtion_entry == 'EDIT' :
-        pass
+        table_name = funtion_argument_one
+        condition = funtion_argument_three.split("=")
+        thing_to_change = funtion_argument_five.split("=")
+        edit_table(table_name=table_name, things_to_change=thing_to_change, condition=condition)
 
 if __name__ == "__main__" :
     # create database dir in case is the first time using 
