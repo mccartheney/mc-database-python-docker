@@ -72,9 +72,9 @@ The following commands are available for interacting with the database:
   python main.py INSERT INTO users id,name,email VALUES 1,John,Doe
   ```
 
-- **SELECT column FROM table WHERE condition:** Select specific columns from a table based on a condition.
+- **SELECT column FROM table WHERE column_value:** Select specific columns from a table based on a condition.
   ```bash
-  python main.py SELECT name,email FROM users WHERE id=1
+  python main.py SELECT id FROM users WHERE 1
   ```
 
 - **REMOVE FROM table WHERE condition:** Remove specific data from a table based on a condition.
