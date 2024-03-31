@@ -89,7 +89,7 @@ The following commands are available for interacting with the database:
 
 - **EDIT table SET key=value WHERE condition:** Edit data in a table based on a condition.
   ```bash
-  python main.py EDIT users SET name=John, email=john@example.com WHERE id=1
+  python main.py EDIT users SET name=mc WHERE id=1
   ```
 
 - **SHOW table:** Show all data in the specified table.
