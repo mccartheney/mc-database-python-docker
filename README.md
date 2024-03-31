@@ -5,7 +5,7 @@ This project is a simple database management system (DBMS) implemented in Python
 ## Table of Contents
 
 1. [Features](#features)
-8. [TODO](#todo)
+8. [Todo](#todo)
 2. [Prerequisites](#prerequisites)
 3. [Usage](#usage)
 4. [Commands](#commands)
@@ -21,7 +21,7 @@ This project is a simple database management system (DBMS) implemented in Python
 - **Docker Support:** Run the application inside a Docker container.
 
 
-## TODO <a name="todo"></a>
+## Todo <a name="todo"></a>
 
 - [ ] Implement error handling to gracefully handle unexpected inputs or errors during operations.
 - [ ] Warn the user if a specified table or data does not exist before attempting to perform operations on it.
